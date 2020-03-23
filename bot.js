@@ -13,10 +13,6 @@ bot.on('ready', () =>{
     console.log('Assist Bot is online!');
 })
 
-bot.on('ready', () => {
-  bot.user.setActivity('noobs feed', { type: 'WATCHING' })
-})
-
 bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX1.length).split(" ");
