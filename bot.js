@@ -140,7 +140,7 @@ bot.on('message', message=>{
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
-                        // message.reply("you will be notified when hunt is ready!");
+                        message.reply("Only testing: you will be notified when WORK is ready!");
 
                         onWorkCD.add(message.author.id);
                         setTimeout(() => {
@@ -161,7 +161,7 @@ bot.on('message', message=>{
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
-                        // message.reply("you will be notified when hunt is ready!");
+                        message.reply("Only testing: you will be notified when WORK is ready!");
 
                         onWorkCD.add(message.author.id);
                         setTimeout(() => {
