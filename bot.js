@@ -44,7 +44,7 @@ bot.on('message', message=>{
             message.reply('fk u :)');
         break;
 
-        case 'poll' :
+        case 'poll':
             const Embed = new RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
@@ -52,6 +52,7 @@ bot.on('message', message=>{
 
             if(!args[1]) {
                 message.channel.send(Embed);
+                break;
             }
 
             let msgArgs = args.slice(1).join(" ");
