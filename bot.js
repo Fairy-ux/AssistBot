@@ -65,7 +65,18 @@ bot.on('message', message=>{
         break;
 
         case 'coinflip':
-            message.channel.send((Math.floor(Math.random() * 2) === 0) ? 'heads' : 'tails');
+            function doRandHT() {
+                var rand = ['HEADS!','TAILS!'];
+                
+                return rand[Math.floor(Math.random()*rand.length)];
+                }
+                
+                 const embed = {
+                "title": `Here is the winner!`,
+                "description": doRandHT(),
+                "color": 7584788,
+                };
+                message.channel.send({ embed });
         break;
     }
 })
