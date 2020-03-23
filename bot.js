@@ -7,7 +7,8 @@ const PREFIX1 = '!';
 const PREFIX2 = 'rpg ';
 
 const autoRemind = new Set();
-const onCD = new Set();
+const onHuntCD = new Set();
+const onWorkCD = new Set();
 
 bot.on('ready', () =>{
     console.log('Assist Bot is online!');
@@ -83,50 +84,96 @@ bot.on('message', message=>{
 
 bot.on('message', message=>{
 
-    let args = message.content.substring(PREFIX2.length).split(" ");
+    let args = message.toLowerCase().content.substring(PREFIX2.length).split(" ");
 
-    switch(args[0]){
+    switch(args[0].toLowerCase()){
         case 'hunt':
             if(message.author.username === "TheHellLaw") {
-                if(onCD.has(message.author.id)) {
-                    message.reply("IT IS ON COOLDOWN!!!!!!")
+                if(onHuntCD.has(message.author.id)) {
+                    message.reply("your hunt is on cooldown. mangar yumu?")
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
                         // message.reply("you will be notified when hunt is ready!");
 
-                        onCD.add(message.author.id);
+                        onHuntCD.add(message.author.id);
                         setTimeout(() => {
-                            onCD.delete(message.author.id)
+                            onHuntCD.delete(message.author.id)
                             message.reply("your hunt is ready!")
                         }, 60000*0.65)
 
                     } else { 
-                        onCD.add(message.author.id);
+                        onHuntCD.add(message.author.id);
                         setTimeout(() => {
-                            onCD.delete(message.author.id)
+                            onHuntCD.delete(message.author.id)
                         }, 60000*0.65)
                     }
                 }
             } else {
-                if(onCD.has(message.author.id)) {
-                    message.reply("IT IS ON COOLDOWN!!!!!!")
+                if(onHuntCD.has(message.author.id)) {
+                    message.reply("your hunt is on cooldown pliz mahgod")
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
                         // message.reply("you will be notified when hunt is ready!");
 
-                        onCD.add(message.author.id);
+                        onHuntCD.add(message.author.id);
                         setTimeout(() => {
-                            onCD.delete(message.author.id)
+                            onHuntCD.delete(message.author.id)
                             message.reply("your hunt is ready!")
                         }, 60000)
 
                     } else { 
-                        onCD.add(message.author.id);
+                        onHuntCD.add(message.author.id);
                         setTimeout(() => {
-                            onCD.delete(message.author.id)
+                            onHuntCD.delete(message.author.id)
                         }, 60000)
+                    }
+                }
+            }
+        break;
+
+        case 'chop': case 'fish': case 'axe': case 'net': case 'pickup': case 'ladder': case 'mine': case 'boat': case 'pickaxe': case 'tractor': case 'chainsaw': case 'bigboat': case 'drill':
+            if(message.author.username === "TheHellLaw") {
+                if(onWorkCD.has(message.author.id)) {
+                    message.reply("your work commands are on cooldown pliz")
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        // message.reply("you will be notified when hunt is ready!");
+
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 60000*0.65)
+
+                    } else { 
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                        }, 300000*0.65)
+                    }
+                }
+            } else {
+                if(onWorkCD.has(message.author.id)) {
+                    message.reply("your workd commands are on cooldown pliz")
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        // message.reply("you will be notified when hunt is ready!");
+
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 60000)
+
+                    } else { 
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                        }, 300000)
                     }
                 }
             }
