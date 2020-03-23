@@ -45,7 +45,7 @@ bot.on('message', message=>{
         break;
 
         case 'poll':
-            const Embed = new Discord.MessageEmbed()
+            const Embed = new Discord.RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .setDescription("!poll to initiate a simple yes or no poll!")
@@ -54,7 +54,7 @@ bot.on('message', message=>{
             .setFooter("Some footer text here");
 
             if(!args[1]) {
-                message.channel.send();
+                message.channel.send(Embed);
                 break;
             }
 
