@@ -59,8 +59,8 @@ bot.on('message', message=>{
             let msgArgs = args.slice(1).join(" ");
 
             message.channel.send(msgArgs).then(messageReaction => {
-                messageReaction.react("✔️");
                 messageReaction.react("❌");
+                messageReaction.react("✅");
             });
         break;
     }
