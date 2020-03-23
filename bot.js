@@ -146,7 +146,7 @@ bot.on('message', message=>{
                         setTimeout(() => {
                             onWorkCD.delete(message.author.id)
                             message.reply("ready to work!")
-                        }, 60000*0.65)
+                        }, 300000*0.65)
 
                     } else { 
                         onWorkCD.add(message.author.id);
@@ -167,7 +167,7 @@ bot.on('message', message=>{
                         setTimeout(() => {
                             onWorkCD.delete(message.author.id)
                             message.reply("ready to work!")
-                        }, 60000)
+                        }, 300000)
 
                     } else { 
                         onWorkCD.add(message.author.id);
