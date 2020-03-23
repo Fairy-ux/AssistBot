@@ -11,6 +11,7 @@ const onCD = new Set();
 
 bot.on('ready', () =>{
     console.log('Assist Bot is online!');
+    bot.user.setActivity("noobs feed!", {type: "WATCHING"})
 })
 
 bot.on('message', message=>{
