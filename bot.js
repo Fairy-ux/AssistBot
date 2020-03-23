@@ -49,10 +49,6 @@ bot.on('message', message=>{
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .setDescription("!poll to initiate a simple yes or no poll!")
-            .addFields(
-                {name: "Test field Title 1", value: "Some test value 1"},
-                {name: "Test field Title 2", value: "Some test value 2"}
-            )
             .addField("Inline field title", "Some value here", true)
             .setTimestamp()
             .setFooter("Some footer text here");
