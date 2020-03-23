@@ -48,7 +48,7 @@ bot.on('message', message=>{
             const Embed = new RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
-            .setDescription("!poll to initiate a simple yes or no poll!")
+            .setDescription("!poll to initiate a simple yes or no poll!");
 
             if(!args[1]) {
                 message.channel.send(Embed);
