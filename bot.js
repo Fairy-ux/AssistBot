@@ -45,20 +45,22 @@ bot.on('message', message=>{
         break;
 
         case 'poll':
-            const Embed = new Discord.RichEmbed()
-            .setColor(0xFFC300)
-            .setTitle("Initiate Poll")
-            .setDescription("!poll to initiate a simple yes or no poll!")
+            // EMBED NOT WORKING
+            // const Embed = new Discord.RichEmbed()
+            // .setColor(0xFFC300)
+            // .setTitle("Initiate Poll")
+            // .setDescription("!poll to initiate a simple yes or no poll!")
 
-            if(!args[1]) {
-                message.channel.send(Embed);
-                break;
-            }
+            // if(!args[1]) {
+            //     message.channel.send(Embed);
+            //     break;
+            // }
+
             let msgArgs = args.slice(1).join(" ");
 
             message.channel.send(msgArgs).then(messageReaction => {
-                messageReaction.react(":o:");
-                messageReaction.react(":x:");
+                messageReaction.react("✔️");
+                messageReaction.react("❌");
             });
         break;
     }
