@@ -57,8 +57,8 @@ bot.on('message', message=>{
             let msgArgs = args.slice(1).join(" ");
 
             message.channel.send(msgArgs).then(messageReaction => {
-                messageReaction.react("⭕️");
-                messageReaction.react("❌");
+                messageReaction.react(":o:");
+                messageReaction.react(":x:");
             });
         break;
     }
@@ -76,7 +76,7 @@ bot.on('message', message=>{
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
-                        message.reply("you will be notified when hunt is ready!");
+                        // message.reply("you will be notified when hunt is ready!");
 
                         onCD.add(message.author.id);
                         setTimeout(() => {
@@ -97,7 +97,7 @@ bot.on('message', message=>{
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
-                        message.reply("you will be notified when hunt is ready!");
+                        // message.reply("you will be notified when hunt is ready!");
 
                         onCD.add(message.author.id);
                         setTimeout(() => {
