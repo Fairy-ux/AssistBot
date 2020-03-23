@@ -63,6 +63,10 @@ bot.on('message', message=>{
                 messageReaction.react("❎");
             });
         break;
+
+        case 'coinflip':
+            message.channel.send((Math.floor(Math.random() * 2) === 0) ? 'heads' : 'tails');
+        break;
     }
 })
 
