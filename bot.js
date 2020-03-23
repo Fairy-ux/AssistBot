@@ -31,6 +31,9 @@ bot.on('message', message=>{
             autoRemind.delete(message.author.id);
             message.reply("your auto remind is now off!");
         break;
+        case 'hello':
+            message.reply('fk u :)');
+        break;
     }
 })
 
