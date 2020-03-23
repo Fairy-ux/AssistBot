@@ -40,7 +40,7 @@ bot.on('message', message=>{
             }
         break;
 
-        case 'hello' || 'Hello' || 'HELLO':
+        case (args[0].toLowerCase === "hello"):
             message.reply('fk u :)');
         break;
 
@@ -69,7 +69,7 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX2.length).split(" ");
 
     switch(args[0]){
-        case 'hunt' || 'Hunt' || 'HUNT':
+        case 'hunt':
             if(message.author.username === "TheHellLaw") {
                 if(onCD.has(message.author.id)) {
                     message.reply("IT IS ON COOLDOWN!!!!!!")
