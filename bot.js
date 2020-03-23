@@ -84,7 +84,7 @@ bot.on('message', message=>{
 
 bot.on('message', message=>{
 
-    let args = message.toLowerCase().content.substring(PREFIX2.length).split(" ");
+    let args = message.content.toLowerCase().substring(PREFIX2.length).split(" ");
 
     switch(args[0].toLowerCase()){
         case 'hunt':
