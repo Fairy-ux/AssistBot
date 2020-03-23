@@ -41,17 +41,24 @@ bot.on('message', message=>{
         break;
 
         case 'hello':
-            message.reply('fk u :)');
+            message.reply('Hyeloo, nyu hjgniin? Wuaanananana');
         break;
 
         case 'poll':
             const Embed = new Discord.RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
-            .setDescription("!poll to initiate a simple yes or no poll!");
+            .setDescription("!poll to initiate a simple yes or no poll!")
+            .addFields(
+                {name: "Test field Title 1", value: "Some test value 1"},
+                {name: "Test field Title 2", value: "Some test value 2"}
+            )
+            .addField("Inline field title", "Some value here", true)
+            .setTimestamp()
+            .setFooter("Some footer text here");
 
             if(!args[1]) {
-                message.channel.send(Embed);
+                message.channel.send();
                 break;
             }
 
