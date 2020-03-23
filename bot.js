@@ -49,21 +49,17 @@ bot.on('message', message=>{
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .setDescription("!poll to initiate a simple yes or no poll!")
-            .addField("Inline field title", "Some value here", true)
-            .setTimestamp()
-            .setFooter("Some footer text here");
 
             if(!args[1]) {
                 message.channel.send(Embed);
                 break;
             }
-
             let msgArgs = args.slice(1).join(" ");
 
             message.channel.send(msgArgs).then(messageReaction => {
                 messageReaction.react("⭕️");
                 messageReaction.react("❌");
-            })
+            });
         break;
     }
 })
