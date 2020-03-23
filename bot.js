@@ -11,6 +11,7 @@ const onCD = new Set();
 
 bot.on('ready', () =>{
     console.log('Assist Bot is online!');
+    bot.user.setActivity("noobs feed!", {type: "WATCHING"})
 })
 
 bot.on('message', message=>{
@@ -31,6 +32,7 @@ bot.on('message', message=>{
             autoRemind.delete(message.author.id);
             message.reply("your auto remind is now off!");
         break;
+
         case 'hello':
             message.reply('fk u :)');
         break;
@@ -56,7 +58,12 @@ bot.on('message', message=>{
                         message.reply("your hunt is ready!")
                     }, 60000*0.65)
 
-                } else { }
+                } else { 
+                    onCD.add(message.author.id);
+                    setTimeout(() => {
+                        onCD.delete(message.author.id)
+                    }, 60000*0.65)
+                }
             } else {
                 if(onCD.has(message.author.id)) {
                     message.reply("IT IS ON COOLDOWN!!!!!!")
@@ -71,11 +78,16 @@ bot.on('message', message=>{
                             message.reply("your hunt is ready!")
                         }, 60000)
 
-                    } else { }
+                    } else { 
+                        onCD.add(message.author.id);
+                        setTimeout(() => {
+                            onCD.delete(message.author.id)
+                        }, 60000)
+                    }
                 }
             }
         break;
     }
 })
 
-bot.login(token);
+bot.login(process.env.token);
