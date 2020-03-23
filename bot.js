@@ -45,7 +45,7 @@ bot.on('message', message=>{
         break;
 
         case 'poll':
-            const Embed = new RichEmbed()
+            const Embed = new Discord.RichEmbed()
             .setColor(0xFFC300)
             .setTitle("Initiate Poll")
             .setDescription("!poll to initiate a simple yes or no poll!");
