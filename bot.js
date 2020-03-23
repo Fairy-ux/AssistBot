@@ -17,7 +17,7 @@ bot.on('message', message=>{
     
     let args = message.content.substring(PREFIX1.length).split(" ");
 
-    switch(args[0]){
+    switch(args[0].toLowerCase){
         case 'help':
             message.channel.send('Hello, !remindon turns on your auto remind\n!remindoff turns off your auto remind')
         break;
@@ -40,7 +40,7 @@ bot.on('message', message=>{
             }
         break;
 
-        case (args[0].toLowerCase === "hello"):
+        case 'hello':
             message.reply('fk u :)');
         break;
 
