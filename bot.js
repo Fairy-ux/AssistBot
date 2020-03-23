@@ -43,25 +43,27 @@ bot.on('message', message=>{
     let args = message.content.substring(PREFIX2.length).split(" ");
 
     switch(args[0]){
-        case 'hunt':
+        case 'hunt' || 'Hunt' || 'HUNT':
             if(message.author.username === "TheHellLaw") {
                 if(onCD.has(message.author.id)) {
                     message.reply("IT IS ON COOLDOWN!!!!!!")
                 }
-                if(autoRemind.has(message.author.id)) {
-                    message.reply("you will be notified when hunt is ready!");
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        message.reply("you will be notified when hunt is ready!");
 
-                    onCD.add(message.author.id);
-                    setTimeout(() => {
-                        onCD.delete(message.author.id)
-                        message.reply("your hunt is ready!")
-                    }, 60000*0.65)
+                        onCD.add(message.author.id);
+                        setTimeout(() => {
+                            onCD.delete(message.author.id)
+                            message.reply("your hunt is ready!")
+                        }, 60000*0.65)
 
-                } else { 
-                    onCD.add(message.author.id);
-                    setTimeout(() => {
-                        onCD.delete(message.author.id)
-                    }, 60000*0.65)
+                    } else { 
+                        onCD.add(message.author.id);
+                        setTimeout(() => {
+                            onCD.delete(message.author.id)
+                        }, 60000*0.65)
+                    }
                 }
             } else {
                 if(onCD.has(message.author.id)) {
