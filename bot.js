@@ -23,17 +23,43 @@ bot.on('message', message=>{
         break;
 
         case 'remindon':
-            autoRemind.add(message.author.id);
-            message.reply("your auto remind is now on!");
+            if(autoRemind.has(message.author.id)) {
+                message.reply("your auto remind is already on!");
+            } else {
+                autoRemind.add(message.author.id);
+                message.reply("your auto remind is now on!");
+            }
         break;
 
         case 'remindoff':
-            autoRemind.delete(message.author.id);
-            message.reply("your auto remind is now off!");
+            if(autoRemind.has(message.author.id)) {
+                autoRemind.delete(message.author.id);
+                message.reply("your auto remind is now off!");
+            } else {
+                message.reply("your auto remind is already off!");
+            }
         break;
 
-        case 'hello':
+        case 'hello' || 'Hello' || 'HELLO':
             message.reply('fk u :)');
+        break;
+
+        case 'poll' :
+            const Embed = new RichEmbed()
+            .setColor(0xFFC300)
+            .setTitle("Initiate Poll")
+            .setDescription("!poll to initiate a simple yes or no poll!")
+
+            if(!args[1]) {
+                message.channel.send(Embed);
+            }
+
+            let msgArgs = args.slice(1).join(" ");
+
+            message.channel.send(msgArgs).then(messageReaction => {
+                messageReaction.react("⭕️");
+                messageReaction.react("❌");
+            })
         break;
     }
 })
