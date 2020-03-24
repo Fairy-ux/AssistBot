@@ -27,21 +27,30 @@ bot.on('message', message=>{
         break;
 
         case 'info':
-            const embedinfo = {
+            function showInfo() {
+                var info = "Assist Bot for EPIC RPG by Fxxrx\nStill in testing!";
+                return info;
+                }
+                
+                 const embed = {
                 "title": `Assist Bot`,
-                "description": "Assist Bot for EPIC RPG by Fxxrx\nStill in testing!",
+                "description": showInfo(),
                 "color": 7584788,
                 };
-                message.channel.send({ embedinfo });
+                message.channel.send({ embed });
         break;
 
-        case 'testing':
-            const embedtest = {
+        case 'test':
+            function showTest() {
+                var test = "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!";
+                return test;
+                }
+                 const embed = {
                 "title": `If you mess up the assist timer and your actual CD`,
-                "description": "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!",
+                "description": showTest(),
                 "color": 7584788,
                 };
-                message.channel.send({ embedtest });
+                message.channel.send({ embed });
         break;
 
         case 'remindon':
