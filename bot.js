@@ -194,28 +194,29 @@ bot.on('message', message=>{
             }
         break;
 
-        case 'ed lb':
-        case 'edgy lootbox':
-            if(onLbCD.has(message.author.id)) {
-                message.reply("your LOOTBOX is on cooldown!")
-            }
-            else{
-                if(autoRemind.has(message.author.id)) {
-                    message.reply("Only testing: you will be notified when LOOTBOX is ready!");
+        case 'buy':
+            if(args[1].toLowerCase() === "ed" && args[2].toLowerCase() === lb) {
+                    if(onLbCD.has(message.author.id)) {
+                        message.reply("your LOOTBOX is on cooldown!")
+                    }
+                    else{
+                        if(autoRemind.has(message.author.id)) {
+                            message.reply("Only testing: you will be notified when LOOTBOX is ready!");
 
-                    onLbCD.add(message.author.id);
-                    setTimeout(() => {
-                        onLbCD.delete(message.author.id)
-                        message.reply("LOOTBOX READY")
-                    }, 10800000)
+                            onLbCD.add(message.author.id);
+                            setTimeout(() => {
+                                onLbCD.delete(message.author.id)
+                                message.reply("LOOTBOX READY")
+                            }, 10800000)
 
-                } else { 
-                    onLbCD.add(message.author.id);
-                    setTimeout(() => {
-                        onLbCD.delete(message.author.id)
-                    }, 10800000)
+                        } else { 
+                            onLbCD.add(message.author.id);
+                            setTimeout(() => {
+                                onLbCD.delete(message.author.id)
+                            }, 10800000)
+                        }
+                    }
                 }
-            }
         break;
 
         case 'adv':
