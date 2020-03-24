@@ -141,11 +141,56 @@ bot.on('message', message=>{
         case 'ladder':
         case 'mine':
         case 'boat': 
-        case 'pickaxe':
         case 'tractor':
         case 'chainsaw':
         case 'bigboat':
         case 'drill':
+            if(message.author.username === "TheHellLaw") {
+                if(onWorkCD.has(message.author.id)) {
+                    message.reply("your work commands are on cooldown pliz")
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        message.reply("Only testing: you will be notified when WORK is ready!");
+
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 300000*0.65)
+
+                    } else { 
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                        }, 300000*0.65)
+                    }
+                }
+            } else {
+                if(onWorkCD.has(message.author.id)) {
+                    message.reply("your work commands are on cooldown pliz")
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        message.reply("Only testing: you will be notified when WORK is ready!");
+
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 300000)
+
+                    } else { 
+                        onWorkCD.add(message.author.id);
+                        setTimeout(() => {
+                            onWorkCD.delete(message.author.id)
+                        }, 300000)
+                    }
+                }
+            }
+        break;
+
+        case 'pickaxe':
             if(message.author.username === "TheHellLaw") {
                 if(onWorkCD.has(message.author.id)) {
                     message.reply("your work commands are on cooldown pliz")
