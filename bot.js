@@ -4,7 +4,7 @@ const bot = new Discord.Client();
 const token = 'NjkwNzU2OTU4Nzc2NzIxNDE4.XnWDtA.xulUlMG3wFmBSAYLkQVsf4D_bzc';
 
 const PREFIX1 = '!';
-const PREFIX2 = 'rpg';
+const PREFIX2 = 'rpg ';
 
 const autoRemind = new Set();
 const onHuntCD = new Set();
@@ -87,7 +87,7 @@ bot.on('message', message=>{
     let args = message.content.toLowerCase().substring(PREFIX2.length).split(" ");
 
     switch(args[0].toLowerCase()){
-        case ' hunt':
+        case 'hunt':
             if(message.author.username === "TheHellLaw") {
                 if(onHuntCD.has(message.author.id)) {
                     message.reply("your hunt is on cooldown. mangar yumu?")
@@ -133,19 +133,19 @@ bot.on('message', message=>{
             }
         break;
 
-        case ' chop':
-        case ' fish':
-        case ' axe':
-        case ' net':
-        case ' pickup':
-        case ' ladder':
-        case ' mine':
-        case ' boat': 
-        case ' pickaxe':
-        case ' tractor':
-        case ' chainsaw':
-        case ' bigboat':
-        case ' drill':
+        case 'chop':
+        case 'fish':
+        case 'axe':
+        case 'net':
+        case 'pickup':
+        case 'ladder':
+        case 'mine':
+        case 'boat': 
+        case 'pickaxe':
+        case 'tractor':
+        case 'chainsaw':
+        case 'bigboat':
+        case 'drill':
             if(message.author.username === "TheHellLaw") {
                 if(onWorkCD.has(message.author.id)) {
                     message.reply("your work commands are on cooldown pliz")
