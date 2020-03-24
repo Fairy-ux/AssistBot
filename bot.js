@@ -135,7 +135,7 @@ bot.on('message', message=>{
 
         case 'chop':
         case 'fish':
-        case 'axe':
+        case 'ae':
         case 'net':
         case 'pickup':
         case 'ladder':
