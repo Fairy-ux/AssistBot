@@ -23,34 +23,36 @@ bot.on('message', message=>{
 
     switch(args[0].toLowerCase()){
         case 'help':
-            message.channel.send('Hello!\n!remindon turns on your auto remind\n!remindoff turns off your auto remind')
+            message.channel.send('**Hello!\n!remindon turns on your auto remind\n!remindoff turns off your auto remind**')
         break;
 
         case 'info':
-            function showInfo() {
-                var info = 'Assist Bot for EPIC RPG by Fxxrx\nStill in testing!';
-                return info;
-                }
+            message.channel.send('**Assist Bot for EPIC RPG by Fxxrx\nStill in testing!**')
+            // function showInfo() {
+            //     var info = 'Assist Bot for EPIC RPG by Fxxrx\nStill in testing!';
+            //     return info;
+            //     }
                 
-                 const embedInfo = {
-                "title": `Assist Bot`,
-                "description": showInfo(),
-                "color": 7584788,
-                };
-                message.channel.send({ embedInfo });
+            //      const embedInfo = {
+            //     "title": `Assist Bot`,
+            //     "description": showInfo(),
+            //     "color": 7584788,
+            //     };
+            //     message.channel.send({ embedInfo });
         break;
 
         case 'test':
-            function showTest() {
-                var test = 'Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if its ready, good to go!';
-                return test;
-                }
-                 const embedTest = {
-                "title": `If you mess up the assist timer and your actual CD`,
-                "description": showTest(),
-                "color": 7584788,
-                };
-                message.channel.send({ embedTest });
+            message.channel.send('**If you mess up the assist timer and your actual CD\nDo the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if its ready, good to go!**')
+            // function showTest() {
+            //     var test = 'Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if its ready, good to go!';
+            //     return test;
+            //     }
+            //      const embedTest = {
+            //     "title": `If you mess up the assist timer and your actual CD`,
+            //     "description": showTest(),
+            //     "color": 7584788,
+            //     };
+            //     message.channel.send({ embedTest });
         break;
 
         case 'remindon':
