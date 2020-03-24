@@ -133,8 +133,19 @@ bot.on('message', message=>{
             }
         break;
 
-        case 'chop': case 'fish': case 'axe': case 'net': case 'pickup': case 'ladder': case 'mine': case 'boat': 
-        case 'pickaxe': case 'tractor': case 'chainsaw': case 'bigboat': case 'drill':
+        case 'chop':
+        case 'fish':
+        case 'axe':
+        case 'net':
+        case 'pickup':
+        case 'ladder':
+        case 'mine':
+        case 'boat': 
+        case 'pickaxe':
+        case 'tractor':
+        case 'chainsaw':
+        case 'bigboat':
+        case 'drill':
             if(message.author.username === "TheHellLaw") {
                 if(onWorkCD.has(message.author.id)) {
                     message.reply("your work commands are on cooldown pliz")
