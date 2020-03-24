@@ -147,7 +147,7 @@ bot.on('message', message=>{
         case 'drill':
             if(message.author.username === "TheHellLaw") {
                 if(onWorkCD.has(message.author.id)) {
-                    message.reply("your work commands are on cooldown pliz")
+                    message.reply("your work commands are on cooldown pliz");
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
