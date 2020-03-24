@@ -190,51 +190,51 @@ bot.on('message', message=>{
             }
         break;
 
-        case 'pickaxe':
-            if(message.author.username === "TheHellLaw") {
-                if(onWorkCD.has(message.author.id)) {
-                    message.reply("your work commands are on cooldown pliz")
-                }
-                else{
-                    if(autoRemind.has(message.author.id)) {
-                        message.reply("Only testing: you will be notified when WORK is ready!");
+        // case 'pickaxe':
+        //     if(message.author.username === "TheHellLaw") {
+        //         if(onWorkCD.has(message.author.id)) {
+        //             message.reply("your work commands are on cooldown pliz")
+        //         }
+        //         else{
+        //             if(autoRemind.has(message.author.id)) {
+        //                 message.reply("Only testing: you will be notified when WORK is ready!");
 
-                        onWorkCD.add(message.author.id);
-                        setTimeout(() => {
-                            onWorkCD.delete(message.author.id)
-                            message.reply("ready to work!")
-                        }, 300000*0.65)
+        //                 onWorkCD.add(message.author.id);
+        //                 setTimeout(() => {
+        //                     onWorkCD.delete(message.author.id)
+        //                     message.reply("ready to work!")
+        //                 }, 300000*0.65)
 
-                    } else { 
-                        onWorkCD.add(message.author.id);
-                        setTimeout(() => {
-                            onWorkCD.delete(message.author.id)
-                        }, 300000*0.65)
-                    }
-                }
-            } else {
-                if(onWorkCD.has(message.author.id)) {
-                    message.reply("your work commands are on cooldown pliz")
-                }
-                else{
-                    if(autoRemind.has(message.author.id)) {
-                        message.reply("Only testing: you will be notified when WORK is ready!");
+        //             } else { 
+        //                 onWorkCD.add(message.author.id);
+        //                 setTimeout(() => {
+        //                     onWorkCD.delete(message.author.id)
+        //                 }, 300000*0.65)
+        //             }
+        //         }
+        //     } else {
+        //         if(onWorkCD.has(message.author.id)) {
+        //             message.reply("your work commands are on cooldown pliz")
+        //         }
+        //         else{
+        //             if(autoRemind.has(message.author.id)) {
+        //                 message.reply("Only testing: you will be notified when WORK is ready!");
 
-                        onWorkCD.add(message.author.id);
-                        setTimeout(() => {
-                            onWorkCD.delete(message.author.id)
-                            message.reply("ready to work!")
-                        }, 300000)
+        //                 onWorkCD.add(message.author.id);
+        //                 setTimeout(() => {
+        //                     onWorkCD.delete(message.author.id)
+        //                     message.reply("ready to work!")
+        //                 }, 300000)
 
-                    } else { 
-                        onWorkCD.add(message.author.id);
-                        setTimeout(() => {
-                            onWorkCD.delete(message.author.id)
-                        }, 300000)
-                    }
-                }
-            }
-        break;
+        //             } else { 
+        //                 onWorkCD.add(message.author.id);
+        //                 setTimeout(() => {
+        //                     onWorkCD.delete(message.author.id)
+        //                 }, 300000)
+        //             }
+        //         }
+        //     }
+        // break;
 
         case 'withdraw':
             message.reply("don't you dare gamble with that!")
