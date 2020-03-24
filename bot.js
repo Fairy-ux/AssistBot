@@ -23,7 +23,25 @@ bot.on('message', message=>{
 
     switch(args[0].toLowerCase()){
         case 'help':
-            message.channel.send('Hello, !remindon turns on your auto remind\n!remindoff turns off your auto remind')
+            message.channel.send('Hello!\n!remindon turns on your auto remind\n!remindoff turns off your auto remind')
+        break;
+
+        case 'info':
+            const embed = {
+                "title": `Assist Bot`,
+                "description": "Assist Bot for EPIC RPG by Fxxrx\nStill in testing!",
+                "color": 7584788,
+                };
+                message.channel.send({ embed });
+        break;
+
+        case 'testing':
+            const embed = {
+                "title": `If you mess up the assist timer and your actual CD`,
+                "description": "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!",
+                "color": 7584788,
+                };
+                message.channel.send({ embed });
         break;
 
         case 'remindon':
