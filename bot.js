@@ -9,6 +9,9 @@ const PREFIX2 = 'rpg ';
 const autoRemind = new Set();
 const onHuntCD = new Set();
 const onWorkCD = new Set();
+const onAdvCD = new Set();
+const onLbCD = new Set();
+const guildCD = new Set();
 
 bot.on('ready', () =>{
     console.log('Assist Bot is online!');
@@ -90,7 +93,7 @@ bot.on('message', message=>{
         case 'hunt':
             if(message.author.username === "TheHellLaw") {
                 if(onHuntCD.has(message.author.id)) {
-                    message.reply("your hunt is on cooldown. mangar yumu?")
+                    message.reply("your hunt is on cooldown. mangar yumu")
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
@@ -111,7 +114,7 @@ bot.on('message', message=>{
                 }
             } else {
                 if(onHuntCD.has(message.author.id)) {
-                    message.reply("your hunt is on cooldown pliz mahgod")
+                    message.reply("your hunt is on cooldown!")
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
@@ -135,11 +138,12 @@ bot.on('message', message=>{
 
         case 'chop':
         case 'fish':
-        case 'ae':
+        //case 'axe':
         case 'net':
         case 'pickup':
         case 'ladder':
         case 'mine':
+        case 'pickaxe':
         case 'boat': 
         case 'tractor':
         case 'chainsaw':
@@ -147,7 +151,7 @@ bot.on('message', message=>{
         case 'drill':
             if(message.author.username === "TheHellLaw") {
                 if(onWorkCD.has(message.author.id)) {
-                    message.reply("your work commands are on cooldown pliz");
+                    message.reply("your work commands are on cooldown!");
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
@@ -168,7 +172,7 @@ bot.on('message', message=>{
                 }
             } else {
                 if(onWorkCD.has(message.author.id)) {
-                    message.reply("your work commands are on cooldown pliz")
+                    message.reply("your work commands are on cooldown!")
                 }
                 else{
                     if(autoRemind.has(message.author.id)) {
@@ -190,48 +194,99 @@ bot.on('message', message=>{
             }
         break;
 
-        // case 'pickaxe':
-        //     if(message.author.username === "TheHellLaw") {
-        //         if(onWorkCD.has(message.author.id)) {
-        //             message.reply("your work commands are on cooldown pliz")
+        case 'ed lb':
+        case 'edgy lootbox':
+            if(onLbCD.has(message.author.id)) {
+                message.reply("your LOOTBOX is on cooldown!")
+            }
+            else{
+                if(autoRemind.has(message.author.id)) {
+                    message.reply("Only testing: you will be notified when LOOTBOX is ready!");
+
+                    onLbCD.add(message.author.id);
+                    setTimeout(() => {
+                        onLbCD.delete(message.author.id)
+                        message.reply("LOOTBOX READY")
+                    }, 10800000)
+
+                } else { 
+                    onLbCD.add(message.author.id);
+                    setTimeout(() => {
+                        onLbCD.delete(message.author.id)
+                    }, 10800000)
+                }
+            }
+        break;
+
+        case 'adv':
+        case 'adventure':
+            if(message.author.username === "TheHellLaw") {
+                if(onAdvCD.has(message.author.id)) {
+                    message.reply("your ADV is on cooldown");
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        message.reply("Only testing: you will be notified when ADV is ready!");
+
+                        onAdvCD.add(message.author.id);
+                        setTimeout(() => {
+                            onAdvCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 3600000*0.65)
+
+                    } else { 
+                        onAdvCD.add(message.author.id);
+                        setTimeout(() => {
+                            onAdvCD.delete(message.author.id)
+                        }, 3600000*0.65)
+                    }
+                }
+            } else {
+                if(onAdvCD.has(message.author.id)) {
+                    message.reply("your ADV is on cooldown")
+                }
+                else{
+                    if(autoRemind.has(message.author.id)) {
+                        message.reply("Only testing: you will be notified when ADV is ready!");
+
+                        onAdvCD.add(message.author.id);
+                        setTimeout(() => {
+                            onAdvCD.delete(message.author.id)
+                            message.reply("ready to work!")
+                        }, 3600000)
+
+                    } else { 
+                        onAdvCD.add(message.author.id);
+                        setTimeout(() => {
+                            onAdvCD.delete(message.author.id)
+                        }, 3600000)
+                    }
+                }
+            }
+        break;
+
+        // case 'guild':
+        //     if(args[1] === raid || args[1] === upgrade) {
+        //         if(onLbCD.has(message.author.id)) {
+        //             message.reply("your LOOTBOX is on cooldown!")
         //         }
         //         else{
         //             if(autoRemind.has(message.author.id)) {
-        //                 message.reply("Only testing: you will be notified when WORK is ready!");
-
-        //                 onWorkCD.add(message.author.id);
+        //                 message.reply("Only testing: you will be notified when LOOTBOX is ready!");
+    
+        //                 onLbCD.add(message.author.id);
         //                 setTimeout(() => {
-        //                     onWorkCD.delete(message.author.id)
-        //                     message.reply("ready to work!")
-        //                 }, 300000*0.65)
-
+        //                     onLbCD.delete(message.author.id)
+        //                     message.reply("LOOTBOX READY")
+        //                 }, 10800000)
+    
         //             } else { 
-        //                 onWorkCD.add(message.author.id);
+        //                 onLbCD.add(message.author.id);
         //                 setTimeout(() => {
-        //                     onWorkCD.delete(message.author.id)
-        //                 }, 300000*0.65)
-        //             }
-        //         }
-        //     } else {
-        //         if(onWorkCD.has(message.author.id)) {
-        //             message.reply("your work commands are on cooldown pliz")
-        //         }
-        //         else{
-        //             if(autoRemind.has(message.author.id)) {
-        //                 message.reply("Only testing: you will be notified when WORK is ready!");
-
-        //                 onWorkCD.add(message.author.id);
-        //                 setTimeout(() => {
-        //                     onWorkCD.delete(message.author.id)
-        //                     message.reply("ready to work!")
-        //                 }, 300000)
-
-        //             } else { 
-        //                 onWorkCD.add(message.author.id);
-        //                 setTimeout(() => {
-        //                     onWorkCD.delete(message.author.id)
-        //                 }, 300000)
-        //             }
+        //                     onLbCD.delete(message.author.id)
+        //                 }, 10800000)
+                
+        //             }    
         //         }
         //     }
         // break;
