@@ -28,7 +28,7 @@ bot.on('message', message=>{
 
         case 'info':
             function showInfo() {
-                var info = "Assist Bot for EPIC RPG by Fxxrx\nStill in testing!";
+                var info = 'Assist Bot for EPIC RPG by Fxxrx\nStill in testing!';
                 return info;
                 }
                 
@@ -42,7 +42,7 @@ bot.on('message', message=>{
 
         case 'test':
             function showTest() {
-                var test = "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!";
+                var test = 'Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if its ready, good to go!';
                 return test;
                 }
                  const embedTest = {
