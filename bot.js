@@ -27,21 +27,21 @@ bot.on('message', message=>{
         break;
 
         case 'info':
-            const embed = {
+            const embedinfo = {
                 "title": `Assist Bot`,
                 "description": "Assist Bot for EPIC RPG by Fxxrx\nStill in testing!",
                 "color": 7584788,
                 };
-                message.channel.send({ embed });
+                message.channel.send({ embedinfo });
         break;
 
         case 'testing':
-            const embed = {
+            const embedtest = {
                 "title": `If you mess up the assist timer and your actual CD`,
                 "description": "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!",
                 "color": 7584788,
                 };
-                message.channel.send({ embed });
+                message.channel.send({ embedtest });
         break;
 
         case 'remindon':
