@@ -115,7 +115,7 @@ bot.on('message', message=>{
 })
 
 bot.on('message', message=>{
-    if(message.content.startsWith("rpg ")) {
+    if(message.content.startsWith("rpg ") || message.content.startsWith("Rpg ") || message.content.startsWith("RPG ")) {
 
         let args = message.content.toLowerCase().substring(PREFIX2.length).split(" ");
 
