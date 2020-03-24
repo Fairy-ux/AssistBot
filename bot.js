@@ -32,12 +32,12 @@ bot.on('message', message=>{
                 return info;
                 }
                 
-                 const embed = {
+                 const embedInfo = {
                 "title": `Assist Bot`,
                 "description": showInfo(),
                 "color": 7584788,
                 };
-                message.channel.send({ embed });
+                message.channel.send({ embedInfo });
         break;
 
         case 'test':
@@ -45,12 +45,12 @@ bot.on('message', message=>{
                 var test = "Do the command ASAP, wait until the assist timer reminds you, check if your actual CD is ready, if it's ready, good to go!";
                 return test;
                 }
-                 const embed = {
+                 const embedTest = {
                 "title": `If you mess up the assist timer and your actual CD`,
                 "description": showTest(),
                 "color": 7584788,
                 };
-                message.channel.send({ embed });
+                message.channel.send({ embedTest });
         break;
 
         case 'remindon':
