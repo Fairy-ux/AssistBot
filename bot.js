@@ -237,7 +237,11 @@ bot.on('message', message=>{
         break;
 
         case 'withdraw':
+            message.reply("don't you dare gamble with that!")
+        break;
 
+        case 'deposit':
+            message.reply("good boi")
         break;
     }
 })
