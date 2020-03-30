@@ -121,7 +121,7 @@ bot.on('message', message=>{
 
         switch(args[0].toLowerCase()){
             case 'hunt':
-                if(message.author.username === "TheHellLaw") {
+                if(message.author.username === "FML Kami") {
                     if(onHuntCD.has(message.author.id)) {
                         message.reply("your hunt is on cooldown. mangar yumu")
                     }
@@ -179,7 +179,7 @@ bot.on('message', message=>{
             case 'chainsaw':
             case 'bigboat':
             case 'drill':
-                if(message.author.username === "TheHellLaw") {
+                if(message.author.username === "FML Kami") {
                     if(onWorkCD.has(message.author.id)) {
                         message.reply("your work commands are on cooldown!");
                     }
@@ -251,7 +251,7 @@ bot.on('message', message=>{
 
             case 'adv':
             case 'adventure':
-                if(message.author.username === "TheHellLaw") {
+                if(message.author.username === "FML Kami") {
                     if(onAdvCD.has(message.author.id)) {
                         message.reply("your ADV is on cooldown");
                     }
