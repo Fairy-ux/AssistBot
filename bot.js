@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 
-const token = 'NjkwNzU2OTU4Nzc2NzIxNDE4.XnWDtA.xulUlMG3wFmBSAYLkQVsf4D_bzc';
+const token = '****'; ## hidden due to bot token compromise issue.
 
 const PREFIX1 = '!';
 const PREFIX2 = 'rpg ';
