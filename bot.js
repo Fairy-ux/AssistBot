@@ -74,7 +74,7 @@ bot.on('message', message=>{
         break;
 
         case 'hello':
-            message.reply('Hyeloo, nyu hjgniin? Wuaanananana');
+            message.reply('Hyeloo');
         break;
 
         case 'poll':
@@ -123,7 +123,7 @@ bot.on('message', message=>{
             case 'hunt':
                 if(message.author.username === "FML Kami") {
                     if(onHuntCD.has(message.author.id)) {
-                        message.reply("your hunt is on cooldown. mangar yumu")
+                        message.reply("your hunt is on cooldown.")
                     }
                     else{
                         if(autoRemind.has(message.author.id)) {
